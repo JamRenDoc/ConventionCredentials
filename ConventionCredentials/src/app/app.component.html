@@ -1,44 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-     
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-       
-  <ul class="navbar-nav">
-         
-  <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-   
-         
-  <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-   
-         
-  <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-   
-         
-  <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-   
-  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-   
-        </li>
-   
-      </ul>
-   
-    </div>
-   
-  </nav>
-  
+
+<div class="container">
+    <h1>Registration</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Middle Name</th>
+          <th>Last Name</th>
+          <th>Street Address</th>
+          <th>City</th>
+          <th>Zip Code</th>
+          <th>County</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Del/Alt</th>
+          <th>Register</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendee of allAttendees">
+          <td>{{ attendee.FirstName }}</td>
+          <td>{{ attendee.MiddleName }}</td>
+          <td>{{ attendee.LastName }}</td>
+          <td>{{ attendee.StreetAddress }}</td>
+          <td>{{ attendee.City }}</td>
+          <td>{{ attendee.zip }}</td>
+          <td>{{ attendee.County }}</td>
+          <td>{{ attendee.email }}</td>
+          <td>{{ attendee.PhoneNumber }}</td>
+          <td>{{ attendee.delAlt }}</td>
+          <td><button type="button" class="btn btn-secondary btn-sm" (click)="RegisterAttendee(attendee.id)">Register</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

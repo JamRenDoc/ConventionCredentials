@@ -10,8 +10,8 @@ var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, 'dist/ConventionCredentials')));
-app.use('/attendees', express.static(path.join(__dirname, 'dist/ConventionCredentials')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/attendees', express.static(path.join(__dirname, 'public')));
 app.use('/attendee', attendees);
 
 // catch 404 and forward to error handler

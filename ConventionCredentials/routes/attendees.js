@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var path = require('path');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
+var connectionString = "postgres://postgres:edumgolem@localhost:5432/ConventionCredentials";
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
