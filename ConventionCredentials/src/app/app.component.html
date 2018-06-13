@@ -11,6 +11,7 @@
           <th>City</th>
           <th>Zip Code</th>
           <th>County</th>
+          <th>District</th>
           <th>Email</th>
           <th>Phone Number</th>
           <th>Del/Alt</th>
@@ -18,14 +19,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let attendee of allAttendees">
+        <tr>
+          <th><input type="string" id='firstNameFilter' [(ngModel)]='firstNameFilter'></th>
+          <th></th>
+          <th><input type="string" id='lastNameFilter' [(ngModel)]='lastNameFilter'></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th><input type="string" id='countyFilter' [(ngModel)]='countyFilter'></th>
+          <th><input type="string" id='districtFilter' [(ngModel)]='districtFilter'></th>
+          <th></th>
+          <th></th>
+          <th><input type="string" id='delAltFilter' [(ngModel)]='DelAltFilter'></th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let attendee of allAttendees | stringFilter:firstNameFilter:'FirstName' | stringFilter:lastNameFilter:'LastName' | stringFilter:countyFilter:'CountyName' | stringFilter:districtFilter:'CongressionalDistrict' | stringFilter:DelAltFilter:'Del/Alt'">
           <td>{{ attendee.FirstName }}</td>
           <td>{{ attendee.MiddleName }}</td>
           <td>{{ attendee.LastName }}</td>
-          <td>{{ attendee.StreetAddress }}</td>
+          <td>{{ attendee.street }}</td>
           <td>{{ attendee.City }}</td>
           <td>{{ attendee.zip }}</td>
           <td>{{ attendee.CountyName }}</td>
+          <td>{{ attendee.CongressionalDistrict }}</td>
           <td>{{ attendee.emailAddress }}</td>
           <td>{{ attendee.phoneNumber }}</td>
           <td>{{ attendee.DelAlt }}</td>
